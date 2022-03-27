@@ -11,7 +11,6 @@ function ListNode(x){
 }
 
 // 直接删除法：
-// 以下两个方案都是一样的道理，看哪个思路更顺些。前者是个人的，后者是官方的
 // 在遍历单链表的时候，检查当前节点与下一点是否为相同值，如果相同，继续查找祥同值的最大长度，然后指针改变指向。
 function deleteDuplication(pHead)
 {
@@ -35,30 +34,6 @@ function deleteDuplication(pHead)
     return vHead.next;
 }
 
-function deleteDuplication2(pHead)
-{
-    let vHead = new ListNode(0);
-    vHead.next = pHead;
-    let prev = vHead;
-    let curr = pHead;
-
-    while (curr) {
-        if (curr.next && curr.val === curr.next.val) {
-            curr = curr.next;
-            while (curr.next && curr.val === curr.next.val) {
-                curr = curr.next;
-            }
-            curr = curr.next;
-            prev.next = curr;
-
-        }
-        else {
-            prev = curr;
-            curr = curr.next;
-        }
-    }
-    return vHead.next;
-}
 module.exports = {
     deleteDuplication : deleteDuplication2
 };

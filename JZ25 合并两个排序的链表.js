@@ -31,8 +31,8 @@ function Merge2(pHead1, pHead2)
     // 方案二：迭代方案 -  还是迭代简单
     // 技巧：一般创建单链表都会设一个虚拟头结点，也叫哨兵，因为这样每一个结点都有一个前驱结点。
     // head 是头节点，不会变的。curr 是当前节点，一直会变的。
-    let head = new ListNode(0)
-    let curr = head
+    let head = new ListNode(0);
+    let curr = head;
     while(pHead1 && pHead2){
         if(pHead1.val <= pHead2.val){
             curr.next = pHead1

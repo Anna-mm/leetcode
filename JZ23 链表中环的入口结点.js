@@ -12,19 +12,20 @@
     this.val = x;
     this.next = null;
 }*/
-// 方案1：将访问过的节点进行记录
+// 方案1：将访问过的节点进行标记
 function EntryNodeOfLoop(pHead)
 {
-    const record = [];
-    while(pHead) {
-        if (record.indexOf(pHead.val) !== -1) {
-            return pHead;
+    while(pHead){
+        if(pHead.flag){
+            return pHead
+        }else{
+            pHead.flag = true;
+            pHead = pHead.next
         }
-        record.push(pHead.val);
-        pHead = pHead.next;
     }
+    return null
 }
-// 时间复杂度：O(n) 空间复杂度：O(n)
+// 时间复杂度：O(n) 空间复杂度：O(1)
 
 // 方案2：快慢指针
 function EntryNodeOfLoop2(pHead)
