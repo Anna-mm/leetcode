@@ -20,10 +20,11 @@
  */
  var reverseList = function(head) {
     // 方案1：双指针 prev、next 循环
+    // 极客时间就讲了这种方案。
     // let prev = null;
     // let curr = head;
     // while (curr) {
-        // 这里是一个闭环
+    // 这里是一个闭环
     //     const temp = curr.next;
     //     curr.next = prev;
     //     prev = curr;
