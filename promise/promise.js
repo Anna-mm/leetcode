@@ -50,6 +50,12 @@ function Promise(executor) {
 
 Promise.prototype.then = function (onFulfilled, onRejected) {
     //PromiseA+ 2.2.1 / PromiseA+ 2.2.5 / PromiseA+ 2.2.7.3 / PromiseA+ 2.2.7.4
+    // 必须把 value 变成函数，否则会变成值穿透。比如
+    //     Promise.resolve(1)
+    //   .then(2)
+    //   .then(Promise.resolve(3))
+    //   .then(console.log)
+    // 将resolve(1) 的值直接传到最后一个then里, 所以输出结果为 1
     onFulfilled = typeof onFulfilled === 'function' ? onFulfilled : value => value;
     onRejected = typeof onRejected === 'function' ? onRejected : reason => { throw reason };
     let self = this;
