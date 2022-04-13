@@ -60,6 +60,8 @@ Promise.prototype.then = function (onFulfilled, onRejected) {
     onRejected = typeof onRejected === 'function' ? onRejected : reason => { throw reason };
     let self = this;
     //PromiseA+ 2.2.7
+
+    // 我问: 都执行到这里了，难道还有 pending 的情况嘛？？？？？？
     let promise2 = new Promise((resolve, reject) => {
         if (self.status === FULFILLED) {
             //PromiseA+ 2.2.2
