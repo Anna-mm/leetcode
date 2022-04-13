@@ -1,3 +1,4 @@
+// 手写实现 promiseAll 和 promiseRace
 function promiseAll(promises) {
     return new Promise((resolve, reject) => {
         // Iterable => Array
@@ -8,6 +9,7 @@ function promiseAll(promises) {
         const len = promises.length;
         let count = 0;
 
+        // 这里为什么不用 for of，因为要用索引 i
         for (let i = 0; i < len; i++) {
             // Promise.resolve 确保把所有数据都转化为 Promise
             Promise.resolve(promises[i]).then(value => {
@@ -36,7 +38,6 @@ function promiseRace(promises) {
                 })
         }
     })
-
 }
 
 const sleep = (seconds) => new Promise(resolve => setTimeout(() => resolve(seconds), seconds))

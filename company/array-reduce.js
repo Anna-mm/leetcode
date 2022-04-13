@@ -1,4 +1,7 @@
-// 接受 4 个参数：
+// 实现数组的 reduce
+// 接收 2 个参数：一个 reducer、一个初始值
+
+// reducer 接受 4 个参数：
 // Accumulator 累计器
 // Current Value 当前值
 // Index 当前索引
@@ -6,12 +9,12 @@
 
 Array.prototype.myReduce = function(reducer, initialValue) {
     const hasInitial = arguments.length > 1;
-    let ret = hasInitial ? initialValue : this[0];
+    let currentValue = hasInitial ? initialValue : this[0];
     for (let i = hasInitial ? 0 : 1; i < this.length; i++) {
         // 注意四个参数
-        ret = reducer.call(undefined, ret, this[i], i, this);
+        currentValue = reducer.call(undefined, currentValue, this[i], i, this);
     }
-    return ret;
+    return currentValue;
 }
 
 // 数组里所有值的和

@@ -1,3 +1,5 @@
+// 不能改变原始数组
+
 Array.prototype.getReader = function () {
     const arr = this;
     // 读取指针
@@ -8,6 +10,7 @@ Array.prototype.getReader = function () {
                 number = 1;
             }
             else {
+                // 非数字、负数、浮点数返回错误
                 if (typeof number !== "number"
                     || Math.abs(number) !== number
                     || Math.floor(number) !== number) {

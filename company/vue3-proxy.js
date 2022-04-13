@@ -52,7 +52,7 @@ function reactive(target = {}) {
 
     // 生成代理对象
     const observed = new Proxy(target, proxyConf)
-    return observed
+    return observed;
 }
 
 // 测试数据
@@ -73,7 +73,7 @@ const data = {
     }
 }
 
-const proxyData = reactive(data)
+const proxyData = reactive(data);
 
 console.log(proxyData.info);
 console.log(proxyData.info.a);

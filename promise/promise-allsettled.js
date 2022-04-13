@@ -4,7 +4,7 @@
 
 // if (Promise && !Promise.allSettled) {
     Promise.allSettledPolyfill = promises => Promise.all(
-        promises.map((promise) => {
+        promises.map(promise => {
             return promise
                 .then(value => ({state: "fulfilled", value: value }))
                 .catch(reason => ({state: "rejected", reason: reason }))

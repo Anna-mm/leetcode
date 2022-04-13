@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .test {
+            /* box-sizing: content-box; */
+            box-sizing: border-box;
+            width: 100px;
+            height:100px;
+            margin: 5px;
+            padding: 5px;
+            border: 5px solid blue;
+            background:red;
+        }
+    </style>
+</head>
+<body>
+    <p>content-box: width 就是内容本身的宽度。border-box: width 是盒子的宽度，即内容本身的宽度+padding+border。</p>
+    <p>Background-clip 绘制区域，默认值是 border-box，也就是说到边框内，不包含边框=内容宽度+padding</p>
+    <p>
+        content-box:
+        // 红色 box 的 宽度: width+padding*2=110
+        // 蓝色 box 的 宽度: width+padding*2+border*2=120
+    </p>
+    <p>
+        border-box:
+        // 红色 box 的 宽度: width-border*2=90
+        // 蓝色 box 的 宽度: 90+5*2=100
+    </p>
+    <div class="test"></div>
+</body>
+</html>
