@@ -48,5 +48,6 @@ var maxProfit = function(prices) {
         dp0 = newDp0;
         dp1 = newDp1;
     }
+    // 最后返回的是 dp0，也就是手里没有股票了。
     return dp0;
 };

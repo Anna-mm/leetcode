@@ -18,10 +18,10 @@
 // 输入：nums = [7,7,7,7,7,7,7]
 // 输出：1
 
-// 动态规划
+// 动态规划、双层循环
 // 状态定义：定义 dp[i] 为考虑前 i 个元素，以第 i 个数字结尾的最长上升子序列的长度，注意 nums[i] 必须被选取。
 // 状态转移方程：考虑每轮计算新 dp[i] 时，遍历 [0,i) 列表区间，做以下判断
-//     当 nums[i] > nums[j] 时： nums[i] 可以接在 nums[j] 之后, 此情况下最长上升子序列长度为 dp[j] + 1dp[j]+1 ；
+//     当 nums[i] > nums[j] 时： nums[i] 可以接在 nums[j] 之后, 此情况下最长上升子序列长度为 dp[j] + 1 ；
 //     当 nums[i] <= nums[j] 时： nums[i] 无法接在 nums[j] 之后，此情况上升子序列不成立，跳过。
 // 状态转移方程： dp[i] = max(dp[i], dp[j] + 1)
 /**
@@ -36,9 +36,11 @@ var lengthOfLIS = function(nums) {
     let output = 1;
     for (let i = 1; i < nums.length; i++) {
         for (let j = 0; j < i; j++) {
+            console.log(`比较 nums[i]=${nums[i]} : nums[j]=${nums[j]}`)
             if (nums[i] > nums[j]) {
                 dp[i] = Math.max(dp[i], dp[j] + 1);
             }
+            console.log(`dp[i]=${dp[i]}`)
         }
         output = Math.max(output, dp[i]);
     }
