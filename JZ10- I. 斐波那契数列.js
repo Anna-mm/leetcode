@@ -58,3 +58,5 @@ var fib2 = function(n) {
     }
     return res;
 };
+
+// 方案三：好像还有时间复杂度更好的方案 O(logn), 有点像 LC50 的折半循环。

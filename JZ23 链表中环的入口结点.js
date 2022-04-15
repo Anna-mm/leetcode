@@ -28,6 +28,7 @@ function EntryNodeOfLoop(pHead)
 // 时间复杂度：O(n) 空间复杂度：O(1)
 
 // 方案2：快慢指针 - 可以映射为龟兔赛跑
+// 他妈的这个方式反正我想不到
 function EntryNodeOfLoop2(pHead)
 {
     if (pHead === null || pHead.next === null) {

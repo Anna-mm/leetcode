@@ -31,7 +31,7 @@
     // }
     // return duplicateNumber;
 
-    // 方案三：放置个新的数组
+    // 方案三：放置个新的数组，每放进去一个元素比较一下，如果没有就放进去，如果已经有了就是重复的，就 break
     const newNums = [];
     let duplicateNumber;
     for (const num of nums) {

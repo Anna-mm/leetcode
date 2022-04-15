@@ -1,4 +1,6 @@
 // 统计一个数字在排序数组中出现的次数。
+// 首先考虑到的暴力解法是 lastIndexOf — indexOf + 1
+// 二分查找需要再考虑一下，边界条件有点繁琐
 
 // 示例 1:
 
@@ -31,6 +33,7 @@
     let left = 0, right = nums.length - 1, ans = nums.length;
     while (left <= right) {
         // 寻找中间点
+        // const pivot = low + Math.floor((high - low) / 2); // 找中间点的方式这种也行吧。参考 JZ11
         const mid = Math.floor((left + right) / 2);
         // 有两种情况一定要往前找
         // - 中间点比目标值大，一定往前找

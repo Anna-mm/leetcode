@@ -29,6 +29,7 @@ var firstUniqChar1 = function(s) {
 // 空间复杂度 O(1) ： 由于题目指出 s 只包含小写字母，因此最多有 26 个不同字符，HashMap 存储需占用 O(26) = O(1) 的额外空间。
 
 // 方案二：使用哈希表存储索引
+// 间接证明 map 是保证顺序的
 var firstUniqChar = function(s) {
     const position = new Map();
     const n = s.length;

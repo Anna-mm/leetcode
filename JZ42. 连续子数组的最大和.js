@@ -12,9 +12,12 @@
  * @return {number}
  */
  var maxSubArray = function(nums) {
-    // pre: 以 nums[i] 结尾的和最大的连续子数组的和
+    // pre: 以 nums[i] 结尾的和最大的连续子数组的和。
+
+    // 我说的：dp[i] = Max(dp[i-1] + nums[i], nums[i]) 等价于 pre = Math.max(pre + x, x);
+    // 然后求 dp 0~i 中的最大和：res = Math.max(res, pre);
     let pre = 0, res = nums[0];
-    nums.forEach((x) => {
+    nums.forEach(x => {
         pre = Math.max(pre + x, x);
         res = Math.max(res, pre);
     });
