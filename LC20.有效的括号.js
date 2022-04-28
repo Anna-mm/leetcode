@@ -51,3 +51,35 @@
     return !stack.length;
 };
 
+// const readline = require('readline');
+// const rl = readline.createInterface({
+//    input: process.stdin,
+//    output: process.stdout
+// });
+// rl.on('line', function(data){
+//    console.log(data);
+// })
+
+// function isValid(str) {
+//     const stack = [];
+//     const allBracket = ['(', ')', '[', ']','{', '}'];
+//     const someMap = new Map([
+//         [')', '('],
+//         [']', '['],
+//         ['}', '{']
+//     ]);
+//     for (let i = 0; i < str.length; i++) {
+//         const currChar = str[i];
+//         if (allBracket.indexOf(currChar) === -1) {
+//             continue;
+//         }
+//         if (someMap.has(currChar) && stack.length && stack.pop() !== someMap.get(currChar)) {
+//             return false;
+//         }
+//     }
+//     if (stack.length === 0) {
+//         return true;
+//     }
+// }
+// console.log("Hello World!");
+
